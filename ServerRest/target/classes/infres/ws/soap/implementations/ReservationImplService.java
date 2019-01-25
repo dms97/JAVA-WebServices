@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "ReservationImplService", targetNamespace = "http://implementations.soap.ws.infres/", wsdlLocation = "http://localhost:8001/reservations?wsdl")
+@WebServiceClient(name = "ReservationImplService", targetNamespace = "http://implementations.soap.ws.infres/", wsdlLocation = "http://server-soap:8001/reservations?wsdl")
 public class ReservationImplService
     extends Service
 {
@@ -30,7 +30,7 @@ public class ReservationImplService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8001/reservations?wsdl");
+            url = new URL("http://server-soap:8001/reservations?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

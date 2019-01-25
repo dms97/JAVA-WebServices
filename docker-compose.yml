@@ -11,6 +11,8 @@ services:
     build: ServerSOAP
     networks:
     - backend
+    ports:
+    - "8001:8001"
 
   server-rest:
     image: server-rest
