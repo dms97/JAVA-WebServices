@@ -28,37 +28,44 @@ class PageVolsAndHotels extends React.Component {
 
   componentDidMount() {
     // this.setState({response: fakeData})
-   fetch(url,  {mode: "no-cors"})
-     .then(response => response.json())
+   fetch(url)
+     .then(function (response) {
+
+       return response.json()
+     })
      .then(data => this.setState({response: data}))
   }
 
   render() {
+    console.log(this.state.response)
     const { classes } = this.props
     return (
       <div className={classes.styleTables}>
         <h1>Hotels</h1>
         <table>
-          <tr>
-            <th>Id</th>
-            <th>Chambre</th>
-            <th>Start</th>
-            <th>End</th>
-            <th>Prix</th>
-          </tr>
-        {this.state.response && this.state.response.reservations.map((reservation, i) => (
-          <tr key={i}>
-            <td>{reservation.id}</td>
-            <td>{reservation.chambre}</td>
-            <td>{new Date(reservation.start).toDateString()}</td>
-            <td>{new Date(reservation.end).toDateString()}</td>
-            <td>{reservation.price}</td>
-          </tr>
-        ))}
+          <tbody>
+            <tr>
+              <th>Id</th>
+              <th>Chambre</th>
+              <th>Start</th>
+              <th>End</th>
+              <th>Prix</th>
+            </tr>
+            {this.state.response && this.state.response.reservations.map((reservation, i) => (
+              <tr key={i}>
+                <td>{reservation.id}</td>
+                <td>{reservation.chambre}</td>
+                <td>{new Date(reservation.start).toDateString()}</td>
+                <td>{new Date(reservation.end).toDateString()}</td>
+                <td>{reservation.price}</td>
+              </tr>
+            ))}
+          </tbody>
         </table>
 
         <h1>Vols</h1>
         <table>
+          <tbody>
           <tr>
             <th>Numéro de vol</th>
             <th>Compagnie</th>
@@ -75,6 +82,7 @@ class PageVolsAndHotels extends React.Component {
               <td>{vol.prix}</td>
             </tr>
           ))}
+          </tbody>
         </table>
       </div>
     )
