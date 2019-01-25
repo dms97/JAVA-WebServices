@@ -26,6 +26,6 @@ public class Main {
     }
 
     private static URI getURI() {
-        return UriBuilder.fromUri("http://localhost/").port(8085).build();
+        return UriBuilder.fromUri("http://localhost/").port(80).build();
     }
 }

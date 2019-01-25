@@ -7,8 +7,18 @@ services:
     - "8080:80"
 
   server-soap:
+    image: server-soap
     build: ServerSOAP
+    networks:
+    - backend
 
   server-rest:
+    image: server-rest
     build: ServerRest
+    ports:
+    - "8085:80"
+    networks:
+      - backend
 
+networks:
+  backend:
