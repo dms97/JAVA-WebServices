@@ -28,7 +28,7 @@ class PageVolsAndHotels extends React.Component {
 
   componentDidMount() {
     // this.setState({response: fakeData})
-   fetch(url)
+   fetch(url,  {mode: "no-cors"})
      .then(response => response.json())
      .then(data => this.setState({response: data}))
   }
