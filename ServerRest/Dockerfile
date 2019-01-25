@@ -1,5 +1,4 @@
-FROM java:8
+FROM openjdk:10.0.2
 WORKDIR /
-ADD target/java-rest-server.jar java-rest-server.jar
-EXPOSE 8085
-CMD java -jar java-rest-server.jar
+ADD target/java-rest-server-jar-with-dependencies.jar java-rest-server-jar-with-dependencies.jar
+CMD java -jar java-rest-server-jar-with-dependencies.jar
