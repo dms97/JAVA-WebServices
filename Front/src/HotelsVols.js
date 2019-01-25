@@ -1,24 +1,24 @@
-import React, {Fragment} from "react"
-import {Col, Grid, Row} from "react-bootstrap"
+import React from "react"
+import withStyles from 'react-jss'
+import styles from './HotelsVols.style'
 
-/*
-{
-  "reservations" : [ {
-    "chambre" : 204,
-    "end" : 1548575317752,
-    "id" : 0,
-    "price" : 105,
-    "start" : 1548402517752
-  } ],
-  "vols" : [ {
-    "numeroVol" : 8473,
-    "compagnie" : "Air France",
-    "place" : 105,
-    "depart" : 1548406513160,
-    "prix" : 185
-  } ]
-}
- */
+// const fakeData = {
+//   "reservations" : [ {
+//     "chambre" : 204,
+//     "end" : 1548575317752,
+//     "id" : 0,
+//     "price" : 105,
+//     "start" : 1548402517752
+//   } ],
+//   "vols" : [ {
+//     "numeroVol" : 8473,
+//     "compagnie" : "Air France",
+//     "place" : 105,
+//     "depart" : 1548406513160,
+//     "prix" : 185
+//   } ]
+// }
+
 const url = 'http://159.31.38.204:8085/reservations'
 class PageVolsAndHotels extends React.Component {
   state = {
@@ -26,55 +26,58 @@ class PageVolsAndHotels extends React.Component {
   }
 
   componentDidMount() {
+    // this.setState({response: fakeData})
    fetch(url)
      .then(function(response) { return response.json(); })
-     .then((data) => this.setState({response: data}))}
+     .then((data) => this.setState({response: data}))
+  }
 
   render() {
+    const { classes } = this.props
     return (
-      <Fragment>
+      <div className={classes.styleTables}>
         <h1>Hotels</h1>
-        <Grid>
-          <Row>
-            <Col xsOffset={1} xs={2}>id</Col>
-            <Col xs={2}>chambre</Col>
-            <Col xs={2}>start</Col>
-            <Col xs={2}>end</Col>
-            <Col xs={2}>price</Col>
-          </Row>
+        <table>
+          <tr>
+            <th>Id</th>
+            <th>Chambre</th>
+            <th>Start</th>
+            <th>End</th>
+            <th>Prix</th>
+          </tr>
         {this.state.response && this.state.response.reservations.map((reservation, i) => (
-          <Row key={i}>
-            <Col xsOffset={1} xs={2}>{reservation.id}</Col>
-            <Col xs={2}>{reservation.chambre}</Col>
-            <Col xs={2}>{reservation.start}</Col>
-            <Col xs={2}>{reservation.end}</Col>
-            <Col xs={2}>{reservation.price}</Col>
-          </Row>
+          <tr key={i}>
+            <td>{reservation.id}</td>
+            <td>{reservation.chambre}</td>
+            <td>{new Date(reservation.start).toDateString()}</td>
+            <td>{new Date(reservation.end).toDateString()}</td>
+            <td>{reservation.price}</td>
+          </tr>
         ))}
-        </Grid>
+        </table>
 
         <h1>Vols</h1>
-        <Grid>
-          <Row>
-            <Col xsOffset={1} xs={2}>numeroVol</Col>
-            <Col xs={2}>compagnie</Col>
-            <Col xs={2}>place</Col>
-            <Col xs={2}>depart</Col>
-            <Col xs={2}>prix</Col>
-          </Row>
+        <table>
+          <tr>
+            <th>Numéro de vol</th>
+            <th>Compagnie</th>
+            <th>Place</th>
+            <th>Départ</th>
+            <th>Prix</th>
+          </tr>
           {this.state.response && this.state.response.vols.map((vol, i) => (
-            <Row key={i}>
-              <Col xsOffset={1} xs={2}>{vol.numeroVol}</Col>
-              <Col xs={2}>{vol.compagnie}</Col>
-              <Col xs={2}>{vol.place}</Col>
-              <Col xs={2}>{vol.depart}</Col>
-              <Col xs={2}>{vol.prix}</Col>
-            </Row>
+            <tr key={i}>
+              <td>{vol.numeroVol}</td>
+              <td>{vol.compagnie}</td>
+              <td>{vol.place}</td>
+              <td>{new Date(vol.depart).toDateString()}</td>
+              <td>{vol.prix}</td>
+            </tr>
           ))}
-        </Grid>
-      </Fragment>
+        </table>
+      </div>
     )
   }
 }
 
-export default PageVolsAndHotels
+export default withStyles(styles)(PageVolsAndHotels)
