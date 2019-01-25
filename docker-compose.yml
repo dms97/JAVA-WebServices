@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  front:
+    build: Front
+    ports:
+    - "8080:80"
+
+  server-soap:
+    build: ServerSOAP
+
+  server-rest:
+    build: ServerRest
+

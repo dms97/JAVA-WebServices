@@ -4,10 +4,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>infres.ws.soap</groupId>
+  <groupId>infres.ws</groupId>
   <artifactId>java-rest-server</artifactId>
   <version>1.4</version>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
 
   <name>java-soap-server Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
@@ -62,10 +62,19 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
         </plugin>
-        <plugin>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>3.2.2</version>
-        </plugin>
+          <plugin>
+              <!-- Build an executable JAR -->
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-jar-plugin</artifactId>
+              <version>3.1.0</version>
+            <configuration>
+              <archive>
+                <manifest>
+                  <mainClass>infres.ws.Main</mainClass>
+                </manifest>
+              </archive>
+            </configuration>
+          </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
           <version>2.5.2</version>

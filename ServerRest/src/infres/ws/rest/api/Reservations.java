@@ -26,7 +26,8 @@ public class Reservations {
         List<Reservation> res = reservations.findAll();
         System.out.println("Find "+ res.size()+" reservations");
         try {
-            return Response.status(Response.Status.OK).entity(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(new Voyage(res, Storage.getFakeVols()))).build();
+            return Response.status(Response.Status.OK).header("Access-Control-Allow-Origin", "*")
+                    .entity(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(new Voyage(res, Storage.getFakeVols()))).build();
         } catch (JsonProcessingException e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }

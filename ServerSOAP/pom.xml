@@ -7,11 +7,9 @@
   <groupId>infres.ws.soap</groupId>
   <artifactId>java-soap-server</artifactId>
   <version>1.4</version>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
 
   <name>java-soap-server Maven Webapp</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -50,7 +48,6 @@
 
 
   </dependencies>
-
   <build>
     <finalName>java-soap-server</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
@@ -73,8 +70,17 @@
           <version>2.22.1</version>
         </plugin>
         <plugin>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>3.2.2</version>
+          <!-- Build an executable JAR -->
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.1.0</version>
+          <configuration>
+            <archive>
+              <manifest>
+                <mainClass>infres.ws.soap.ServiceReservationStarter</mainClass>
+              </manifest>
+            </archive>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>

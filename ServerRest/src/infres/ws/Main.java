@@ -21,6 +21,7 @@ public class Main {
 
     private static HttpServer createHttpServer() throws IOException {
         ResourceConfig resourceConfig = new PackagesResourceConfig("infres.ws.rest");
+
         return HttpServerFactory.create(getURI(), resourceConfig);
     }
 
