@@ -22,6 +22,7 @@ export default {
       },
       '& a': {
         color: 'white',
+        textDecoration: 'none',
         '&:hover': {
           color: 'white',
           textDecoration: 'none'

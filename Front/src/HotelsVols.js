@@ -20,6 +20,7 @@ import styles from './HotelsVols.style'
 // }
 
 const url = 'http://159.31.38.204:8085/reservations'
+
 class PageVolsAndHotels extends React.Component {
   state = {
     response: null
@@ -28,8 +29,8 @@ class PageVolsAndHotels extends React.Component {
   componentDidMount() {
     // this.setState({response: fakeData})
    fetch(url)
-     .then(function(response) { return response.json(); })
-     .then((data) => this.setState({response: data}))
+     .then(response => response.json())
+     .then(data => this.setState({response: data}))
   }
 
   render() {
