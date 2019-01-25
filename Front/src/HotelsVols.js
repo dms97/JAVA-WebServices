@@ -19,7 +19,7 @@ import styles from './HotelsVols.style'
 //   } ]
 // }
 
-const url = 'http://159.31.38.204:8085/reservations'
+const url = 'http://server-rest:8085/reservations'
 
 class PageVolsAndHotels extends React.Component {
   state = {
