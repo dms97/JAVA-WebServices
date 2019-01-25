@@ -1,0 +1,5 @@
+infres/ws/soap/models/Reservation.class
+infres/ws/soap/models/Storage.class
+infres/ws/soap/implementations/ReservationImpl.class
+infres/ws/soap/contracts/IReservations.class
+infres/ws/soap/ServiceReservationStarter.class

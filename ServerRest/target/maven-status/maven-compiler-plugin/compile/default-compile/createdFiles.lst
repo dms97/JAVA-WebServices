@@ -1,0 +1,6 @@
+infres/ws/rest/api/Reservations.class
+infres/ws/rest/models/Storage.class
+infres/ws/Main.class
+infres/ws/rest/filter/CorsFilter.class
+infres/ws/rest/models/Voyage.class
+infres/ws/rest/models/Vol.class
