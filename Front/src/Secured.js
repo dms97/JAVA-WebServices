@@ -20,20 +20,11 @@ class Secured extends Component {
   }
 
   render() {
-    if (this.state.keycloak) {
-      if (this.state.authenticated) {
-        return (
-          <HotelsVols />
-        )
-      } else {
-        return (
-          <div>Unable to authenticate!</div>
-        )
-      }
-    }
-    return (
-      <div>Initializing Keycloak...</div>
-    )
+    return this.state.keycloak
+      ? this.state.authenticated
+        ? <HotelsVols />
+        : <div>Unable to authenticate!</div>
+      : <div>Initializing Keycloak...</div>
   }
 }
 export default Secured
