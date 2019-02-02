@@ -2,9 +2,9 @@ import React, {Component} from 'react'
 import './App.css'
 import {BrowserRouter, Link, Route} from "react-router-dom"
 import Home from "./Home"
-import HotelsVols from "./HotelsVols"
 import withStyles from 'react-jss'
 import style from './App.style'
+import Secured from "./Secured"
 
 class App extends Component {
   render() {
@@ -24,7 +24,7 @@ class App extends Component {
           </nav>
           <div className={classes.view}>
             <Route path="/" exact component={Home}/>
-            <Route path="/hotels&vols/" component={HotelsVols}/>
+            <Route path="/hotels&vols/" component={Secured}/>
           </div>
         </div>
       </BrowserRouter>

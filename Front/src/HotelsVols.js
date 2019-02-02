@@ -30,14 +30,12 @@ class PageVolsAndHotels extends React.Component {
     // this.setState({response: fakeData})
    fetch(url)
      .then(function (response) {
-
        return response.json()
      })
      .then(data => this.setState({response: data}))
   }
 
   render() {
-    console.log(this.state.response)
     const { classes } = this.props
     return (
       <div className={classes.styleTables}>
