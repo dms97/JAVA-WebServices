@@ -1,7 +1,7 @@
 import React from "react"
 import withStyles from 'react-jss'
 import styles from './HotelsVols.style'
-import axios from 'axios'
+//import axios from 'axios'
 
 // const fakeData = {
 //   "reservations" : [ {
