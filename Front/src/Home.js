@@ -1,5 +1,5 @@
 import React from "react"
 
 export default () => (
-    <h1>Home</h1>
+    <h1 style={{textAlign: "center"}}>A beautiful home page</h1>
 )
