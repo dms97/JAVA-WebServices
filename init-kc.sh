@@ -15,6 +15,10 @@ docker exec -ti auth /opt/jboss/keycloak/bin/kcadm.sh create roles -r dev -s nam
 #Create a new test user from config
 docker exec -ti auth /opt/jboss/keycloak/bin/kcadm.sh create users -r dev -f /user-config.json
 
+#Assign user to role
+
+docker exec -ti auth /opt/jboss/keycloak/bin/kcadm.sh add-roles -r dev --uusername testuser --rolename user
+
 #Create new client for api
 docker exec -ti auth /opt/jboss/keycloak/bin/kcadm.sh create clients -r dev -s clientId=rest-app -s protocol=openid-connect -s publicClient=false -s bearerOnly=true
 
