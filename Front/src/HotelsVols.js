@@ -1,7 +1,6 @@
 import React from "react"
 import withStyles from 'react-jss'
 import styles from './HotelsVols.style'
-//import axios from 'axios'
 
 // const fakeData = {
 //   "reservations" : [ {
@@ -37,16 +36,10 @@ class PageVolsAndHotels extends React.Component {
        return response.json()
      })
      .then(data => this.setState({response: data}))
-   //  const headers = {'Authorization': this.props.token}
-   //  axios.get(url, {headers}).then(res => {
-   //    this.setState({response: res})
-   //  })
   }
 
   render() {
     const { classes } = this.props
-
-    console.log(this.state.response)
 
     return (
       <div className={classes.styleTables}>
