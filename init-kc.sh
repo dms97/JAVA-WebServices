@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# copy config in container
+docker cp user-config.json auth:/
+
 #Auth with admin account
 docker exec -ti auth /opt/jboss/keycloak/bin/kcadm.sh config credentials --server http://localhost:8080/auth --realm master --user admin
 
@@ -9,8 +12,8 @@ docker exec -ti auth /opt/jboss/keycloak/bin/kcadm.sh create realms -s realm=dev
 #Create a new role for user
 docker exec -ti auth /opt/jboss/keycloak/bin/kcadm.sh create roles -r dev -s name=user
 
-#Create a new test user
-docker exec -ti auth /opt/jboss/keycloak/bin/kcadm.sh create users -r dev -s username=testuser -s enabled=true
+#Create a new test user from config
+docker exec -ti auth /opt/jboss/keycloak/bin/kcadm.sh create users -r dev -f /user-config.json
 
 #Create new client for api
 docker exec -ti auth /opt/jboss/keycloak/bin/kcadm.sh create clients -r dev -s clientId=rest-app -s protocol=openid-connect -s publicClient=false -s bearerOnly=true
