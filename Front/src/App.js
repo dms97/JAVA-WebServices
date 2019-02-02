@@ -42,7 +42,7 @@ class App extends Component {
             </nav>
             <div className={classes.view}>
               <Route path="/" exact component={Home}/>
-              <Route path="/hotels&vols/" component={HotelsVols}/>
+              <Route path="/hotels&vols/" render={() => <HotelsVols token={this.state.keycloak.token}/>}/>
             </div>
           </div>
         </BrowserRouter>

@@ -28,7 +28,11 @@ class PageVolsAndHotels extends React.Component {
 
   componentDidMount() {
     // this.setState({response: fakeData})
-   fetch(url)
+    let request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({'Authorization' : 'Bearer ' + this.props.token})
+    })
+   fetch(request)
      .then(function (response) {
        return response.json()
      })
