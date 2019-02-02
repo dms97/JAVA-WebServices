@@ -11,6 +11,8 @@ Don't forget to run the script to init realm (dev), clients (front and rest-app)
 
 `./init-kc.sh`
 
+Password: **admin**
+
 ## ⚠ keycloak server address
 
 Because we need the same auth server address in container and on your system, you need to add the keycloak server in your host  
