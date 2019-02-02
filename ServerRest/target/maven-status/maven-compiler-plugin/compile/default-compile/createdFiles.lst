@@ -1,6 +1,6 @@
-infres/ws/rest/configurers/CorsConfig$1.class
 infres/ws/soap/contracts/package-info.class
 infres/ws/soap/implementations/ReservationImplService.class
+infres/ws/rest/configurers/FilterProvider.class
 infres/ws/soap/contracts/FindAllResponse.class
 infres/ws/soap/contracts/ObjectFactory.class
 infres/ws/rest/models/Storage.class
@@ -8,7 +8,7 @@ infres/ws/rest/controllers/MainController.class
 infres/ws/soap/contracts/FindResponse.class
 infres/ws/rest/JavaRestServerApplication.class
 infres/ws/soap/implementations/IReservations.class
-infres/ws/rest/configurers/CorsConfig.class
+infres/ws/rest/configurers/FilterProvider$1.class
 infres/ws/rest/models/Voyage.class
 infres/ws/rest/models/Vol.class
 infres/ws/soap/contracts/FindAll.class

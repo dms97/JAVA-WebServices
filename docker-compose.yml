@@ -36,9 +36,12 @@ services:
       POSTGRES_DB: keycloak
       POSTGRES_USER: keycloak
       POSTGRES_PASSWORD: password
+    networks:
+      - security
+
 
   keycloak:
-    image: jboss/keycloak
+    image: jboss/keycloak:4.8.3.Final
     container_name: auth
     environment:
       DB_VENDOR: POSTGRES
@@ -54,9 +57,13 @@ services:
     - 8080:8080
     depends_on:
     - postgres
+    networks:
+    - backend
+    - security
 
 networks:
   backend:
+  security:
 
 volumes:
   postgres_data:

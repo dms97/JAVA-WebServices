@@ -1,7 +1,7 @@
 /Users/matthieu/Workspace/ServerRest/src/main/java/infres/ws/rest/models/Storage.java
 /Users/matthieu/Workspace/ServerRest/src/main/java/infres/ws/soap/contracts/ObjectFactory.java
 /Users/matthieu/Workspace/ServerRest/src/main/java/infres/ws/soap/implementations/IReservations.java
-/Users/matthieu/Workspace/ServerRest/src/main/java/infres/ws/rest/configurers/CorsConfig.java
+/Users/matthieu/Workspace/ServerRest/src/main/java/infres/ws/rest/configurers/FilterProvider.java
 /Users/matthieu/Workspace/ServerRest/src/main/java/infres/ws/soap/contracts/FindResponse.java
 /Users/matthieu/Workspace/ServerRest/src/main/java/infres/ws/rest/models/Voyage.java
 /Users/matthieu/Workspace/ServerRest/src/main/java/infres/ws/rest/JavaRestServerApplication.java

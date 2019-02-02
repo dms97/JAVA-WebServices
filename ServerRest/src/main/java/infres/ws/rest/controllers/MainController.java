@@ -5,6 +5,7 @@ import infres.ws.rest.models.Voyage;
 import infres.ws.soap.contracts.Reservation;
 import infres.ws.soap.implementations.IReservations;
 import infres.ws.soap.implementations.ReservationImplService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,7 +20,6 @@ public class MainController {
     public String noSecuredEndpoint() {
         return "This is an unsecured endpoint payload";
     }
-
 
     @RequestMapping("/reservations")
     public Voyage getReservations() {
