@@ -17,13 +17,13 @@ Because we need the same auth server address in container and on your system, yo
 
 Go to `/etc/hosts` and add the line `127.0.0.1 keycloak`
 
-##To test the app
+## To test the app
 
 Go to `http://localhost:8888` \
 Sign in with `testuser` username and `toto` password
 Go to `hotels&vols` and check if there is rows in table.
 
-##To rebuild container
+## To rebuild container
 
 `docker-compose build`
 
