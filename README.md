@@ -1,5 +1,7 @@
 # JAVA-WebServices
 
+Work by TARTIERE Matthieu, MARIOTTO Damien and JOLIN Alexis
+
 ## To Deploy all
  
 `docker-compose up -d`
@@ -15,9 +17,11 @@ Password: **admin**
 
 ## ⚠ keycloak server address
 
-Because we need the same auth server address in container and on your system, you need to add the keycloak server in your host  
+Because we need the same auth server address in container and on your system, you need to add the keycloak server in your host. 
 
 Go to `/etc/hosts` and add the line `127.0.0.1 keycloak`
+
+Other possibility (not implemented, to improve), The auth server must be the same for all services. We can define an environment variable (the ip of the system) and put it in container with compose. Use the variable in container with the code. 
 
 ## To test the app
 
